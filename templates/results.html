@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Market Results</title>
+</head>
+<body>
+    <h1>Market Prices for {{ crop }}</h1>
+    {% if data %}
+        <ul>
+            {% for item in data %}
+                <li>{{ item['Market'] }} - {{ item['Price'] }} KES</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No market data found for "{{ crop }}".</p>
+    {% endif %}
+    <a href="/">Back</a>
+</body>
+</html>
